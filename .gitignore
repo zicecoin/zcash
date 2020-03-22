@@ -6,10 +6,16 @@ src/zcashd
 src/zcash-cli
 src/zcash-gtest
 src/zcash-tx
+src/ziced
+src/zice-cli
+src/zice-gtest
+src/zice-tx
 src/test/test_bitcoin
 
 *zcashTest.pk
 *zcashTest.vk
+*ziceTest.pk
+*ziceTest.vk
 
 # autoreconf
 Makefile.in
@@ -53,6 +59,7 @@ src/univalue/gen
 *.o
 *.o-*
 .zcash
+.zice
 *.a
 *.pb.cc
 *.pb.h
@@ -94,6 +101,7 @@ build
 /*.info
 test_bitcoin.coverage/
 zcash-gtest.coverage/
+zice-gtest.coverage/
 total.coverage/
 coverage_percent.txt
 afl-temp
@@ -112,6 +120,7 @@ qa/pull-tester/test.*/*
 /doc/doxygen/
 
 libzcashconsensus.pc
+libziceconsensus.pc
 
 contrib/debian/files
 contrib/debian/substvars
