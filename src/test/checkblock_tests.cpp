@@ -7,7 +7,7 @@
 #include "main.h"
 #include "test/test_bitcoin.h"
 #include "utiltime.h"
-#include "zcash/Proof.hpp"
+#include "zice/Proof.hpp"
 
 #include <cstdio>
 

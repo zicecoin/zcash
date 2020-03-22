@@ -1,7 +1,7 @@
 #include "amount.h"
 #include "asyncrpcoperation.h"
 #include "univalue.h"
-#include "zcash/Address.hpp"
+#include "zice/Address.hpp"
 
 class AsyncRPCOperation_saplingmigration : public AsyncRPCOperation
 {

@@ -11,9 +11,9 @@
 #include "transaction_builder.h"
 #include "utiltest.h"
 #include "wallet/wallet.h"
-#include "zcash/JoinSplit.hpp"
-#include "zcash/Note.hpp"
-#include "zcash/NoteEncryption.hpp"
+#include "zice/JoinSplit.hpp"
+#include "zice/Note.hpp"
+#include "zice/NoteEncryption.hpp"
 
 #include <boost/filesystem.hpp>
 
@@ -1094,7 +1094,7 @@ TEST(WalletTests, SpentSaplingNoteIsFromMe) {
     auto nullifier2 = maybe_nf.get();
 
     // NOTE: Not updating the anchor results in a core dump.  Shouldn't builder just return error?
-    // *** Error in `./zcash-gtest': double free or corruption (out): 0x00007ffd8755d990 ***
+    // *** Error in `./zice-gtest': double free or corruption (out): 0x00007ffd8755d990 ***
     anchor = saplingTree.root();
 
     // Create transaction to spend note B
@@ -1954,7 +1954,7 @@ TEST(WalletTests, MarkAffectedSaplingTransactionsDirty) {
     auto scriptPubKey = GetScriptForDestination(tsk.GetPubKey().GetID());
 
     // Generate shielding tx from transparent to Sapling
-    // 0.0005 t-ZEC in, 0.0004 z-ZEC out, 0.0001 t-ZEC fee
+    // 0.0005 t-ZCE in, 0.0004 z-ZCE out, 0.0001 t-ZCE fee
     auto builder = TransactionBuilder(consensusParams, 1, &keystore);
     builder.AddTransparentInput(COutPoint(), scriptPubKey, 50000);
     builder.AddSaplingOutput(extfvk.fvk.ovk, pk, 40000, {});
@@ -2009,7 +2009,7 @@ TEST(WalletTests, MarkAffectedSaplingTransactionsDirty) {
     auto witness = saplingTree.witness();
 
     // Create a Sapling-only transaction
-    // 0.0004 z-ZEC in, 0.00025 z-ZEC out, 0.0001 t-ZEC fee, 0.00005 z-ZEC change
+    // 0.0004 z-ZCE in, 0.00025 z-ZCE out, 0.0001 t-ZCE fee, 0.00005 z-ZCE change
     auto builder2 = TransactionBuilder(consensusParams, 2);
     builder2.AddSaplingSpend(expsk, note, anchor, witness);
     builder2.AddSaplingOutput(extfvk.fvk.ovk, pk, 25000, {});

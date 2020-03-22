@@ -4,7 +4,7 @@
 #include "consensus/validation.h"
 #include "main.h"
 #include "utiltest.h"
-#include "zcash/Proof.hpp"
+#include "zice/Proof.hpp"
 
 class MockCValidationState : public CValidationState {
 public:

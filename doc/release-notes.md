@@ -7,7 +7,7 @@ Notable changes
 Removal of time adjustment and the -maxtimeadjustment= option
 -------------------------------------------------------------
 
-Prior to v2.1.1-1, `zcashd` would adjust the local time that it used by up
+Prior to v2.1.1-1, `ziced` would adjust the local time that it used by up
 to 70 minutes, according to a median of the times sent by the first 200 peers
 to connect to it. This mechanism was inherently insecure, since an adversary
 making multiple connections to the node could effectively control its time
@@ -28,7 +28,7 @@ a warning will still be logged and indicated on the metrics screen if enabled.
 View shielded information in wallet transactions
 ------------------------------------------------
 
-In previous `zcashd` versions, to obtain information about shielded transactions
+In previous `ziced` versions, to obtain information about shielded transactions
 you would use either the `z_listreceivedbyaddress` RPC method (which returns all
 notes received by an address) or `z_listunspent` (which returns unspent notes,
 optionally filtered by addresses). There were no RPC methods that directly
@@ -41,7 +41,7 @@ returns detailed shielded information for all decryptable new and spent notes,
 including:
 
 - The address that each note belongs to.
-- Values in both decimal ZEC and zatoshis.
+- Values in both decimal ZCE and zatoshis.
 - The ID of the transaction that each spent note was received in.
 - An `outgoing` flag on each new note, which will be `true` if the output is not
   for an address in the wallet.

@@ -10,7 +10,7 @@ Jack Grigg (11):
       Add support for spending keys to the basic key store.
       Merge AddSpendingKeyPaymentAddress into AddSpendingKey to simplify API.
       Add methods for byte array expansion and compression.
-      Update Equihash hash generation to match the Zcash spec.
+      Update Equihash hash generation to match the ZiCE spec.
       Extend byte array expansion and compression methods with optional padding.
       Store the Equihash solution in minimal representation in the block header.
       Enable branch coverage in coverage reports.
@@ -40,7 +40,7 @@ Simon Liu (3):
       Add note about zkey and encrypted wallets.
 
 Gaurav Rana (1):
-      Update zcash-cli stop message.
+      Update zice-cli stop message.
 
 Tom Ritter (1):
       Clarify comment about nonce space for Note Encryption.

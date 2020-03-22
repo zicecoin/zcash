@@ -32,7 +32,7 @@ fn key_components() {
         note_nf: [u8; 32],
     };
 
-    // From https://github.com/zcash-hackworks/zcash-test-vectors/blob/master/sapling_key_components.py
+    // From https://github.com/zice-hackworks/zice-test-vectors/blob/master/sapling_key_components.py
     let test_vectors = vec![
         TestVector {
             sk: [

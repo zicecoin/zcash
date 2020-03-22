@@ -10,7 +10,7 @@
 #include <boost/shared_ptr.hpp>
 
 #include "miner.h"
-#include "zcash/IncrementalMerkleTree.hpp"
+#include "zice/IncrementalMerkleTree.hpp"
 
 class CBlock;
 class CBlockIndex;

@@ -4,10 +4,10 @@
 #include <array>
 #include <stdexcept>
 
-#include "zcash/Note.hpp"
-#include "zcash/NoteEncryption.hpp"
-#include "zcash/prf.h"
-#include "zcash/Address.hpp"
+#include "zice/Note.hpp"
+#include "zice/NoteEncryption.hpp"
+#include "zice/prf.h"
+#include "zice/Address.hpp"
 #include "crypto/sha256.h"
 #include "librustzcash.h"
 

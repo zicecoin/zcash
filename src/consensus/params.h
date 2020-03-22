@@ -157,7 +157,7 @@ struct Params {
      * Separately, for mainnet this is also necessary because there was a long time
      * between starting to find the mainnet genesis block (which was mined with a
      * single laptop) and mining the block at height 1. For any new mainnet chain
-     * using Zcash code, the soft fork rule would be enabled from the start so that
+     * using ZiCE code, the soft fork rule would be enabled from the start so that
      * miners would limit their timestamps accordingly.
      *
      * For testnet, the future timestamp soft fork rule was violated for many

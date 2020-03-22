@@ -95,8 +95,8 @@ Jack Grigg (47):
       Add RPC test of RewindBlockIndex
       When rewinding, remove insufficiently-validated blocks
       Adjust deprecation message to work in both UI and -alertnotify
-      Refactor Zcash changes to CCoinsViewDB
-      Update blockchain.py RPC test for Zcash
+      Refactor ZiCE changes to CCoinsViewDB
+      Update blockchain.py RPC test for ZiCE
       Update CBlockTreeDB::EraseBatchSync for dbwrapper refactor
       Fix typo
       test: Check return value of snprintf

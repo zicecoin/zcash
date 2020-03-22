@@ -1,6 +1,6 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin Core developers
-// Copyright (c) 2015-2020 The Zcash developers
+// Copyright (c) 2015-2020 The ZiCE developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or https://www.opensource.org/licenses/mit-license.php .
 
@@ -49,7 +49,7 @@
 using namespace std;
 
 #if defined(NDEBUG)
-# error "Zcash cannot be compiled without assertions."
+# error "ZiCE cannot be compiled without assertions."
 #endif
 
 #include "librustzcash.h"
@@ -109,7 +109,7 @@ static void CheckBlockIndex(const Consensus::Params& consensusParams);
 /** Constant stuff for coinbase transactions we create: */
 CScript COINBASE_FLAGS;
 
-const string strMessageMagic = "Zcash Signed Message:\n";
+const string strMessageMagic = "ZiCE Signed Message:\n";
 
 // Internal stuff
 namespace {
@@ -1048,7 +1048,7 @@ bool CheckTransaction(const CTransaction& tx, CValidationState &state,
     } else {
         // Ensure that zk-SNARKs verify
         BOOST_FOREACH(const JSDescription &joinsplit, tx.vJoinSplit) {
-            if (!joinsplit.Verify(*pzcashParams, verifier, tx.joinSplitPubKey)) {
+            if (!joinsplit.Verify(*pziceParams, verifier, tx.joinSplitPubKey)) {
                 return state.DoS(100, error("CheckTransaction(): joinsplit does not verify"),
                                     REJECT_INVALID, "bad-txns-joinsplit-verification-failed");
             }
@@ -2455,7 +2455,7 @@ bool FindUndoPos(CValidationState &state, int nFile, CDiskBlockPos &pos, unsigne
 static CCheckQueue<CScriptCheck> scriptcheckqueue(128);
 
 void ThreadScriptCheck() {
-    RenameThread("zcash-scriptch");
+    RenameThread("zice-scriptch");
     scriptcheckqueue.Thread();
 }
 
@@ -3940,8 +3940,8 @@ bool ContextualCheckBlock(
     }
 
     // Enforce BIP 34 rule that the coinbase starts with serialized block height.
-    // In Zcash this has been enforced since launch, except that the genesis
-    // block didn't include the height in the coinbase (see Zcash protocol spec
+    // In ZiCE this has been enforced since launch, except that the genesis
+    // block didn't include the height in the coinbase (see ZiCE protocol spec
     // section '6.8 Bitcoin Improvement Proposals').
     if (nHeight > 0)
     {

@@ -4,7 +4,7 @@
 #include "utilmoneystr.h"
 #include "chainparams.h"
 #include "utilstrencodings.h"
-#include "zcash/Address.hpp"
+#include "zice/Address.hpp"
 #include "wallet/wallet.h"
 #include "amount.h"
 
@@ -30,7 +30,7 @@ using namespace std;
 
 /*
     To run tests:
-    ./zcash-gtest --gtest_filter="paymentdisclosure.*"
+    ./zice-gtest --gtest_filter="paymentdisclosure.*"
 
     Note: As an experimental feature, writing your own tests may require option flags to be set.
     mapArgs["-experimentalfeatures"] = true;

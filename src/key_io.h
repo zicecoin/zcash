@@ -1,6 +1,6 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2015 The Bitcoin Core developers
-// Copyright (c) 2016-2018 The Zcash developers
+// Copyright (c) 2016-2018 The ZiCE developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or https://www.opensource.org/licenses/mit-license.php .
 
@@ -11,7 +11,7 @@
 #include <key.h>
 #include <pubkey.h>
 #include <script/standard.h>
-#include <zcash/Address.hpp>
+#include <zice/Address.hpp>
 
 #include <string>
 

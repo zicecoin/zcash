@@ -13,7 +13,7 @@
 #include "utiltest.h"
 #include "test/test_bitcoin.h"
 
-#include "zcash/Address.hpp"
+#include "zice/Address.hpp"
 
 #include <string>
 #include <vector>

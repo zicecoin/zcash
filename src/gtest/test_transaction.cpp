@@ -1,8 +1,8 @@
 #include <gtest/gtest.h>
 
 #include "primitives/transaction.h"
-#include "zcash/Note.hpp"
-#include "zcash/Address.hpp"
+#include "zice/Note.hpp"
+#include "zice/Address.hpp"
 
 #include <array>
 

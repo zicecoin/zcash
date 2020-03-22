@@ -1,10 +1,10 @@
-// Copyright (c) 2018 The Zcash developers
+// Copyright (c) 2018 The ZiCE developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or https://www.opensource.org/licenses/mit-license.php .
 
 #include <utilstrencodings.h>
 #include <test/test_bitcoin.h>
-#include <zcash/NoteEncryption.hpp>
+#include <zice/NoteEncryption.hpp>
 
 #include <boost/test/unit_test.hpp>
 

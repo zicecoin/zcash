@@ -47,8 +47,8 @@ $0 --help
   Show this help message and exit.
 
 $0 [ --enable-proton ] [ MAKEARGS... ]
-  Build Zcash and most of its transitive dependencies from
-  source. MAKEARGS are applied to both dependencies and Zcash itself.
+  Build ZiCE and most of its transitive dependencies from
+  source. MAKEARGS are applied to both dependencies and ZiCE itself.
 
   Pass flags to ./configure using the CONFIGURE_FLAGS environment variable.
   For example, to enable coverage instrumentation (thus enabling "make cov"
@@ -56,7 +56,7 @@ $0 [ --enable-proton ] [ MAKEARGS... ]
 
       CONFIGURE_FLAGS="--enable-lcov --disable-hardening" ./zcutil/build.sh
 
-  If --enable-proton is passed, Zcash is configured to build the Apache Qpid Proton
+  If --enable-proton is passed, ZiCE is configured to build the Apache Qpid Proton
   library required for AMQP support. This library is not built by default.
 
   For verbose output, use:

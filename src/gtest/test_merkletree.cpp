@@ -21,8 +21,8 @@
 #include "serialize.h"
 #include "streams.h"
 
-#include "zcash/IncrementalMerkleTree.hpp"
-#include "zcash/util.h"
+#include "zice/IncrementalMerkleTree.hpp"
+#include "zice/util.h"
 
 #include <boost/foreach.hpp>
 

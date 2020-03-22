@@ -11,8 +11,8 @@
 #include "script/script.h"
 #include "script/standard.h"
 #include "sync.h"
-#include "zcash/Address.hpp"
-#include "zcash/NoteEncryption.hpp"
+#include "zice/Address.hpp"
+#include "zice/NoteEncryption.hpp"
 
 #include <boost/signals2/signal.hpp>
 #include <boost/variant.hpp>

@@ -1,14 +1,14 @@
 Notable changes
 ===============
 
-zcash-cli: arguments privacy
+zice-cli: arguments privacy
 ----------------------------
 
 The RPC command line client gained a new argument, `-stdin`
 to read extra arguments from standard input, one per line until EOF/Ctrl-D.
 For example:
 
-    $ src/zcash-cli -stdin walletpassphrase
+    $ src/zice-cli -stdin walletpassphrase
     mysecretcode
     120
     ^D (Ctrl-D)
@@ -30,7 +30,7 @@ and are affected by this change:
 - RPC `decoderawtransaction`
 - REST `/rest/tx/` (JSON format)
 - REST `/rest/block/` (JSON format when including extended tx details)
-- `zcash-tx -json`
+- `zice-tx -json`
 
 For example, the `scriptSig.asm` property of a transaction input that
 previously showed an assembly representation of:
@@ -75,10 +75,10 @@ Jack Grigg (52):
       depends: Update to latest librustzcash with sapling-crypto dependencies
       Add Sapling to upgrade list
       Add static asserts to ensure CONTINUE_EXECUTION doesn't collide
-      [Bitcoin-Tx] Adjust util-test test cases for Zcash
-      Handle usage of prevector for CScript in Zcash-specific code
-      GetSerializeSize changes in Zcash-specific code
-      Remove nType and nVersion from Zcash-specific code
+      [Bitcoin-Tx] Adjust util-test test cases for ZiCE
+      Handle usage of prevector for CScript in ZiCE-specific code
+      GetSerializeSize changes in ZiCE-specific code
+      Remove nType and nVersion from ZiCE-specific code
       Adjust consensus rules to require v4 transactions from Sapling activation
       Implement basic Sapling v4 transaction parser
       Add Sapling v4 transactions to IsStandard
@@ -91,7 +91,7 @@ Jack Grigg (52):
       Attempt to log before terminating if prevector allocation fails
       Fix -Wstring-plus-int warning on clang
       Update mempool_nu_activation RPC test to exercise both Overwinter and Sapling
-      Use CBitcoinAddress wrappers in Zcash-specific code
+      Use CBitcoinAddress wrappers in ZiCE-specific code
       Change JSOutPoint constructor to have js argument be uint64_t
       Update CreateNewContextualCMutableTransaction to create Sapling transactions
       Expire Overwinter transactions before the Sapling activation height
@@ -111,7 +111,7 @@ Jack Grigg (52):
       Introduce wrappers around CZCSpendingKey
       Introduce wrappers around CZCViewingKey
       Implement {Encode,Decode}PaymentAddress etc. without CZCEncoding
-      Add key_io includes to Zcash-specific code
+      Add key_io includes to ZiCE-specific code
       Add valueBalance to value balances, and enforce its consensus rules
       Track net value entering and exiting the Sapling circuit
       Add contextual comment for GetValueOut() and GetShieldedValueIn()
@@ -144,7 +144,7 @@ Kaz Wesley (1):
       CBase58Data::SetString: cleanse the full vector
 
 Larry Ruane (1):
-      fix qa/zcash/full_test_suite.py pathname
+      fix qa/zice/full_test_suite.py pathname
 
 MarcoFalke (3):
       [uacomment] Sanitize per BIP-0014

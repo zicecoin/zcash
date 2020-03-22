@@ -1,5 +1,5 @@
-#ifndef LIBRUSTZCASH_INCLUDE_H_
-#define LIBRUSTZCASH_INCLUDE_H_
+#ifndef LIBRUSTZICE_INCLUDE_H_
+#define LIBRUSTZICE_INCLUDE_H_
 
 #include <stdint.h>
 
@@ -336,4 +336,4 @@ extern "C" {
     );
 }
 
-#endif // LIBRUSTZCASH_INCLUDE_H_
+#endif // LIBRUSTZICE_INCLUDE_H_

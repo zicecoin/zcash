@@ -1,6 +1,6 @@
-//! FFI between the C++ zcashd codebase and the Rust Zcash crates.
+//! FFI between the C++ ziced codebase and the Rust ZiCE crates.
 //!
-//! This is internal to zcashd and is not an officially-supported API.
+//! This is internal to ziced and is not an officially-supported API.
 
 // Catch documentation errors caused by code changes.
 #![deny(intra_doc_link_resolution_failure)]
@@ -11,7 +11,7 @@
 // that would otherwise be safe.
 //
 // The functions in this crate are all for FFI usage, so it's obvious to the
-// caller (which is only ever zcashd) that the arguments must satisfy the
+// caller (which is only ever ziced) that the arguments must satisfy the
 // necessary assumptions. We therefore ignore this lint to retain the benefit of
 // explicitly annotating the parts of each function that must themselves satisfy
 // assumptions of underlying code.

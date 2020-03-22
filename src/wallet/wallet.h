@@ -23,7 +23,7 @@
 #include "wallet/crypter.h"
 #include "wallet/walletdb.h"
 #include "wallet/rpcwallet.h"
-#include "zcash/Address.hpp"
+#include "zice/Address.hpp"
 #include "base58.h"
 
 #include <algorithm>

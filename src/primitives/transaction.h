@@ -18,10 +18,10 @@
 
 #include <boost/variant.hpp>
 
-#include "zcash/NoteEncryption.hpp"
-#include "zcash/Zcash.h"
-#include "zcash/JoinSplit.hpp"
-#include "zcash/Proof.hpp"
+#include "zice/NoteEncryption.hpp"
+#include "zice/ZiCE.h"
+#include "zice/JoinSplit.hpp"
+#include "zice/Proof.hpp"
 
 // Overwinter transaction version
 static const int32_t OVERWINTER_TX_VERSION = 3;

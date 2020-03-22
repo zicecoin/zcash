@@ -1,4 +1,4 @@
-// Copyright (c) 2018 The Zcash developers
+// Copyright (c) 2018 The ZiCE developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or https://www.opensource.org/licenses/mit-license.php .
 
@@ -12,11 +12,11 @@
 #include "script/script.h"
 #include "script/standard.h"
 #include "uint256.h"
-#include "zcash/Address.hpp"
-#include "zcash/IncrementalMerkleTree.hpp"
-#include "zcash/JoinSplit.hpp"
-#include "zcash/Note.hpp"
-#include "zcash/NoteEncryption.hpp"
+#include "zice/Address.hpp"
+#include "zice/IncrementalMerkleTree.hpp"
+#include "zice/JoinSplit.hpp"
+#include "zice/Note.hpp"
+#include "zice/NoteEncryption.hpp"
 
 #include <boost/optional.hpp>
 

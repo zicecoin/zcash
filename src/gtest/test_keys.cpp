@@ -1,6 +1,6 @@
 #include <chainparams.h>
 #include <key_io.h>
-#include <zcash/Address.hpp>
+#include <zice/Address.hpp>
 
 #include "utiltest.h"
 

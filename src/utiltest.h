@@ -1,16 +1,16 @@
-// Copyright (c) 2016 The Zcash developers
+// Copyright (c) 2016 The ZiCE developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or https://www.opensource.org/licenses/mit-license.php .
 
-#ifndef ZCASH_UTIL_TEST_H
-#define ZCASH_UTIL_TEST_H
+#ifndef ZICE_UTIL_TEST_H
+#define ZICE_UTIL_TEST_H
 
 #include "key_io.h"
 #include "wallet/wallet.h"
-#include "zcash/Address.hpp"
-#include "zcash/JoinSplit.hpp"
-#include "zcash/Note.hpp"
-#include "zcash/NoteEncryption.hpp"
+#include "zice/Address.hpp"
+#include "zice/JoinSplit.hpp"
+#include "zice/Note.hpp"
+#include "zice/NoteEncryption.hpp"
 
 // Sprout
 CWalletTx GetValidSproutReceive(ZCJoinSplit& params,
@@ -67,4 +67,4 @@ CWalletTx GetValidSaplingReceive(const Consensus::Params& consensusParams,
                                  const libzcash::SaplingExtendedSpendingKey &sk,
                                  CAmount value);
 
-#endif // ZCASH_UTIL_TEST_H
+#endif // ZICE_UTIL_TEST_H

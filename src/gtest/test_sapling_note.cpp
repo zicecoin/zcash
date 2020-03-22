@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 
-#include "zcash/Address.hpp"
-#include "zcash/Note.hpp"
+#include "zice/Address.hpp"
+#include "zice/Note.hpp"
 
 #include "amount.h"
 #include "random.h"
@@ -11,7 +11,7 @@
 
 using namespace libzcash;
 
-// Test data from https://github.com/zcash-hackworks/zcash-test-vectors/blob/master/sapling_key_components.py
+// Test data from https://github.com/zice-hackworks/zice-test-vectors/blob/master/sapling_key_components.py
 TEST(SaplingNote, TestVectors)
 {
     uint64_t v = 0;

@@ -7,7 +7,7 @@
 #include "rpc/protocol.h"
 #include "transaction_builder.h"
 #include "utiltest.h"
-#include "zcash/Address.hpp"
+#include "zice/Address.hpp"
 
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
@@ -92,7 +92,7 @@ TEST(TransactionBuilder, TransparentToSapling)
     auto pk = *ivk.address(d);
 
     // Create a shielding transaction from transparent to Sapling
-    // 0.0005 t-ZEC in, 0.0004 z-ZEC out, 0.0001 t-ZEC fee
+    // 0.0005 t-ZCE in, 0.0004 z-ZCE out, 0.0001 t-ZCE fee
     auto builder = TransactionBuilder(consensusParams, 1, &keystore);
     builder.AddTransparentInput(COutPoint(uint256S("1234"), 0), scriptPubKey, 50000);
     builder.AddSaplingOutput(fvk_from.ovk, pk, 40000, {});
@@ -124,7 +124,7 @@ TEST(TransactionBuilder, SaplingToSapling) {
     auto testNote = GetTestSaplingNote(pa, 40000);
     
     // Create a Sapling-only transaction
-    // 0.0004 z-ZEC in, 0.00025 z-ZEC out, 0.0001 t-ZEC fee, 0.00005 z-ZEC change
+    // 0.0004 z-ZCE in, 0.00025 z-ZCE out, 0.0001 t-ZCE fee, 0.00005 z-ZCE change
     auto builder = TransactionBuilder(consensusParams, 2);
     builder.AddSaplingSpend(expsk, testNote.note, testNote.tree.root(), testNote.tree.witness());
 
@@ -163,9 +163,9 @@ TEST(TransactionBuilder, SaplingToSprout) {
     auto sproutAddr = sproutSk.address();
 
     // Create a Sapling-to-Sprout transaction (reusing the note from above)
-    // - 0.0004 Sapling-ZEC in      - 0.00025 Sprout-ZEC out
-    //                              - 0.00005 Sapling-ZEC change
-    //                              - 0.0001 t-ZEC fee
+    // - 0.0004 Sapling-ZCE in      - 0.00025 Sprout-ZCE out
+    //                              - 0.00005 Sapling-ZCE change
+    //                              - 0.0001 t-ZCE fee
     auto builder = TransactionBuilder(consensusParams, 2, nullptr, params);
     builder.AddSaplingSpend(expsk, testNote.note, testNote.tree.root(), testNote.tree.witness());
     builder.AddSproutOutput(sproutAddr, 25000);
@@ -213,11 +213,11 @@ TEST(TransactionBuilder, SproutToSproutAndSapling) {
     CCoinsViewCache view(&fakeDB);
 
     // Create a Sprout-to-[Sprout-and-Sapling] transaction
-    // - 0.00025 Sprout-ZEC in      - 0.00006 Sprout-ZEC out
-    //                              - 0.00004 Sprout-ZEC out
-    //                              - 0.00005 Sprout-ZEC change
-    //                              - 0.00005 Sapling-ZEC out
-    //                              - 0.00005 t-ZEC fee
+    // - 0.00025 Sprout-ZCE in      - 0.00006 Sprout-ZCE out
+    //                              - 0.00004 Sprout-ZCE out
+    //                              - 0.00005 Sprout-ZCE change
+    //                              - 0.00005 Sapling-ZCE out
+    //                              - 0.00005 t-ZCE fee
     auto builder = TransactionBuilder(consensusParams, 2, nullptr, params, &view);
     builder.SetFee(5000);
     builder.AddSproutInput(sproutSk, sproutNote, sproutWitness);
@@ -310,19 +310,19 @@ TEST(TransactionBuilder, FailsWithNegativeChange)
     auto testNote = GetTestSaplingNote(pa, 59999);
 
     // Fail if there is only a Sapling output
-    // 0.0005 z-ZEC out, 0.0001 t-ZEC fee
+    // 0.0005 z-ZCE out, 0.0001 t-ZCE fee
     auto builder = TransactionBuilder(consensusParams, 1);
     builder.AddSaplingOutput(fvk.ovk, pa, 50000, {});
     EXPECT_EQ("Change cannot be negative", builder.Build().GetError());
 
     // Fail if there is only a transparent output
-    // 0.0005 t-ZEC out, 0.0001 t-ZEC fee
+    // 0.0005 t-ZCE out, 0.0001 t-ZCE fee
     builder = TransactionBuilder(consensusParams, 1, &keystore);
     builder.AddTransparentOutput(taddr, 50000);
     EXPECT_EQ("Change cannot be negative", builder.Build().GetError());
 
     // Fails if there is insufficient input
-    // 0.0005 t-ZEC out, 0.0001 t-ZEC fee, 0.00059999 z-ZEC in
+    // 0.0005 t-ZCE out, 0.0001 t-ZCE fee, 0.00059999 z-ZCE in
     builder.AddSaplingSpend(expsk, testNote.note, testNote.tree.root(), testNote.tree.witness());
     EXPECT_EQ("Change cannot be negative", builder.Build().GetError());
 

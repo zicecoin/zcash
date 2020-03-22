@@ -29,9 +29,9 @@
 
 #include "zcbenchmarks.h"
 
-#include "zcash/Zcash.h"
-#include "zcash/IncrementalMerkleTree.hpp"
-#include "zcash/Note.hpp"
+#include "zice/ZiCE.h"
+#include "zice/IncrementalMerkleTree.hpp"
+#include "zice/Note.hpp"
 #include "librustzcash.h"
 
 using namespace libzcash;
@@ -101,7 +101,7 @@ double benchmark_create_joinsplit()
 
     struct timeval tv_start;
     timer_start(tv_start);
-    JSDescription jsdesc(*pzcashParams,
+    JSDescription jsdesc(*pziceParams,
                          joinSplitPubKey,
                          anchor,
                          {JSInput(), JSInput()},
@@ -111,7 +111,7 @@ double benchmark_create_joinsplit()
     double ret = timer_stop(tv_start);
 
     auto verifier = libzcash::ProofVerifier::Strict();
-    assert(jsdesc.Verify(*pzcashParams, verifier, joinSplitPubKey));
+    assert(jsdesc.Verify(*pziceParams, verifier, joinSplitPubKey));
     return ret;
 }
 
@@ -142,7 +142,7 @@ double benchmark_verify_joinsplit(const JSDescription &joinsplit)
     timer_start(tv_start);
     uint256 joinSplitPubKey;
     auto verifier = libzcash::ProofVerifier::Strict();
-    joinsplit.Verify(*pzcashParams, verifier, joinSplitPubKey);
+    joinsplit.Verify(*pziceParams, verifier, joinSplitPubKey);
     return timer_stop(tv_start);
 }
 
@@ -277,7 +277,7 @@ double benchmark_try_decrypt_sprout_notes(size_t nKeys)
     }
 
     auto sk = libzcash::SproutSpendingKey::random();
-    auto tx = GetValidSproutReceive(*pzcashParams, sk, 10, true);
+    auto tx = GetValidSproutReceive(*pziceParams, sk, 10, true);
 
     struct timeval tv_start;
     timer_start(tv_start);
@@ -313,8 +313,8 @@ double benchmark_try_decrypt_sapling_notes(size_t nKeys)
 }
 
 CWalletTx CreateSproutTxWithNoteData(const libzcash::SproutSpendingKey& sk) {
-    auto wtx = GetValidSproutReceive(*pzcashParams, sk, 10, true);
-    auto note = GetSproutNote(*pzcashParams, sk, wtx, 0, 1);
+    auto wtx = GetValidSproutReceive(*pziceParams, sk, 10, true);
+    auto note = GetSproutNote(*pziceParams, sk, wtx, 0, 1);
     auto nullifier = note.nullifier(sk);
 
     mapSproutNoteData_t noteDataMap;

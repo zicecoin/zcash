@@ -1,4 +1,4 @@
-// Copyright (c) 2017 The Zcash developers
+// Copyright (c) 2017 The ZiCE developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or https://www.opensource.org/licenses/mit-license.php .
 
@@ -11,8 +11,8 @@
 #include "transaction_builder.h"
 #include "wallet.h"
 #include "wallet/paymentdisclosure.h"
-#include "zcash/Address.hpp"
-#include "zcash/JoinSplit.hpp"
+#include "zice/Address.hpp"
+#include "zice/JoinSplit.hpp"
 
 #include <array>
 #include <tuple>

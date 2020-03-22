@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-# Builds AFL and an instrumented zcashd, then begins fuzzing.
-# This script must be run from within the top level directory of a zcash clone.
+# Builds AFL and an instrumented ziced, then begins fuzzing.
+# This script must be run from within the top level directory of a zice clone.
 # Pass it the name of a directory in ./src/fuzzing.
 # Additional arguments are passed-through to AFL.
 

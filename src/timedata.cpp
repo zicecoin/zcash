@@ -1,5 +1,5 @@
 // Copyright (c) 2014 The Bitcoin Core developers
-// Copyright (c) 2020 The Zcash developers
+// Copyright (c) 2020 The ZiCE developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or https://www.opensource.org/licenses/mit-license.php .
 
@@ -58,11 +58,11 @@ void CTimeWarning::Warn(size_t peersAhead, size_t peersBehind)
 {
     std::string strMessage;
     if (peersBehind >= TIMEDATA_WARNING_MAJORITY) {
-        strMessage = _("Warning: Your computer's date and time may be ahead of the rest of the network! If your clock is wrong Zcash will not work properly.");
+        strMessage = _("Warning: Your computer's date and time may be ahead of the rest of the network! If your clock is wrong ZiCE will not work properly.");
     } else if (peersAhead >= TIMEDATA_WARNING_MAJORITY) {
-        strMessage = _("Warning: Your computer's date and time may be behind the rest of the network! If your clock is wrong Zcash will not work properly.");
+        strMessage = _("Warning: Your computer's date and time may be behind the rest of the network! If your clock is wrong ZiCE will not work properly.");
     } else {
-        strMessage = _("Warning: Please check that your computer's date and time are correct! If your clock is wrong Zcash will not work properly.");
+        strMessage = _("Warning: Please check that your computer's date and time are correct! If your clock is wrong ZiCE will not work properly.");
     }
     SetMiscWarning(strMessage);
     LogPrintf("*** %s\n", strMessage);
