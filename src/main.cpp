@@ -1761,6 +1761,10 @@ CAmount GetBlockSubsidy(int nHeight, const Consensus::Params& consensusParams)
 {
     CAmount nSubsidy = 12.5 * COIN;
 
+    if (nHeight == 1) {
+      return 10000000 * COIN;
+    }
+
     // Mining slow start
     // The subsidy is ramped up linearly, skipping the middle payout of
     // MAX_SUBSIDY/2 to keep the monetary curve consistent with no slow start.
@@ -3963,7 +3967,7 @@ bool ContextualCheckBlock(
 
         BOOST_FOREACH(const CTxOut& output, block.vtx[0].vout) {
             if (output.scriptPubKey == chainparams.GetFoundersRewardScriptAtHeight(nHeight)) {
-                if (output.nValue == (GetBlockSubsidy(nHeight, consensusParams) / 5)) {
+                if (output.nValue == (GetBlockSubsidy(nHeight, consensusParams) / 10)) {
                     found = true;
                     break;
                 }

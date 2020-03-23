@@ -138,8 +138,8 @@ public:
         auto value = GetBlockSubsidy(nHeight, chainparams.GetConsensus());
 
         if ((nHeight > 0) && (nHeight <= chainparams.GetConsensus().GetLastFoundersRewardBlockHeight(nHeight))) {
-            // Founders reward is 20% of the block subsidy
-            auto vFoundersReward = value / 5;
+            // Founders reward is 10% of the block subsidy
+            auto vFoundersReward = value / 10;
             // Take some reward away from us
             value -= vFoundersReward;
             // And give it to the founders
